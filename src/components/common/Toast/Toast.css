@@ -1,0 +1,108 @@
+.app-toast-viewport {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 2000;
+  display: grid;
+  width: min(400px, calc(100vw - 32px));
+  gap: 10px;
+  pointer-events: none;
+}
+
+.app-toast {
+  position: relative;
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr) 24px;
+  align-items: center;
+  gap: 12px;
+  min-height: 72px;
+  padding: 14px 16px 17px;
+  overflow: hidden;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgb(15 23 42 / 14%);
+  pointer-events: auto;
+  animation: app-toast-enter 180ms ease-out;
+}
+
+.app-toast-icon {
+  width: 27px;
+  height: 27px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: var(--color-success);
+  border-radius: 50%;
+}
+
+.app-toast.is-error .app-toast-icon {
+  background: var(--color-danger);
+}
+
+.app-toast-message {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.app-toast-close {
+  align-self: start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  color: var(--color-text-muted);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.app-toast-close:hover {
+  color: var(--color-text);
+}
+
+.app-toast-progress {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background: var(--color-success);
+  transform-origin: left;
+  animation: app-toast-countdown var(--toast-duration) linear forwards;
+}
+
+.app-toast.is-error .app-toast-progress {
+  background: var(--color-danger);
+}
+
+@keyframes app-toast-enter {
+  from {
+    transform: translateY(-8px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes app-toast-countdown {
+  to {
+    transform: scaleX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-toast,
+  .app-toast-progress {
+    animation-duration: 1ms;
+  }
+}

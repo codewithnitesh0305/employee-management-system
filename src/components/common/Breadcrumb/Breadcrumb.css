@@ -1,0 +1,149 @@
+/* =====================================================
+   BREADCRUMB - THEMED (Indigo) + accessibility + overflow handling
+===================================================== */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  min-height: 36px;
+  font-size: 13px;
+
+  /* keep breadcrumbs on a single line and allow truncation */
+  flex-wrap: nowrap;
+  overflow: hidden;
+  min-width: 0;
+}
+
+/* =====================================================
+   HOME
+===================================================== */
+
+.breadcrumb-home {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  color: var(--color-text-secondary);
+  text-decoration: none;
+
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.breadcrumb-home:hover,
+.breadcrumb-home:focus-visible {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  outline: none;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-primary) 6%, transparent);
+}
+
+/* =====================================================
+   ITEM
+===================================================== */
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+/* make label containers truncate when long */
+.breadcrumb-item .breadcrumb-link,
+.breadcrumb-item .breadcrumb-current {
+  display: inline-block;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* =====================================================
+   SEPARATOR
+===================================================== */
+
+.breadcrumb-separator {
+  color: var(--color-border-strong);
+  flex-shrink: 0;
+}
+
+/* =====================================================
+   LINK
+===================================================== */
+
+.breadcrumb-link {
+  padding: 6px 8px;
+  border-radius: 6px;
+
+  color: var(--color-text-secondary);
+  text-decoration: none;
+
+  transition: background-color 0.12s ease, color 0.12s ease;
+}
+
+.breadcrumb-link:hover,
+.breadcrumb-link:focus-visible {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  outline: none;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-primary) 4%, transparent);
+}
+
+/* keyboard focus ring for accessibility */
+.breadcrumb-link:focus-visible {
+  border-radius: 6px;
+}
+
+/* =====================================================
+   CURRENT PAGE
+===================================================== */
+
+.breadcrumb-current {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 6px 10px;
+  border-radius: 8px;
+
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+  .breadcrumb-item .breadcrumb-link,
+  .breadcrumb-item .breadcrumb-current {
+    max-width: 140px;
+  }
+}
+
+@media (max-width: 600px) {
+  .breadcrumb {
+    gap: 6px;
+    font-size: 12px;
+  }
+
+  .breadcrumb-home {
+    width: 28px;
+    height: 28px;
+  }
+
+  .breadcrumb-item .breadcrumb-link,
+  .breadcrumb-item .breadcrumb-current {
+    max-width: 100px;
+    padding: 4px 6px;
+  }
+}

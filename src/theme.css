@@ -1,0 +1,75 @@
+/* Change this palette to retheme the application globally. */
+:root {
+  --color-primary: #2c85d3;
+  --color-primary-dark: #1768ad;
+  --color-primary-light: #e9f4fd;
+  --color-sidebar: #eaf4ff;
+  --color-sidebar-text: #193b59;
+  --color-sidebar-muted: #597b9b;
+  --color-sidebar-hover: #d9ecfb;
+  --color-background: #f5faff;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f2f8fe;
+  --color-border: #d6e6f5;
+  --color-border-strong: #bbd3e8;
+  --color-text: #1b3650;
+  --color-text-secondary: #58718a;
+  --color-text-muted: #8299af;
+
+  --color-success: #16a34a;
+  --color-success-light: #f0fdf4;
+  --color-warning: #d97706;
+  --color-warning-light: #fffbeb;
+  --color-danger: #dc2626;
+  --color-danger-light: #fef2f2;
+  --color-info: var(--color-primary);
+  --color-info-light: var(--color-primary-light);
+
+  --font-family: "Poppins", Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-size-base: 14px;
+  --font-size-scale-sm: 0.875rem;
+  --font-size-scale-lg: 1.0625rem;
+}
+
+@theme inline {
+  --color-white: var(--color-surface);
+  --color-slate-50: var(--color-background);
+  --color-slate-100: var(--color-surface-muted);
+  --color-slate-200: var(--color-border);
+  --color-slate-300: var(--color-border-strong);
+  --color-slate-400: var(--color-text-muted);
+  --color-slate-500: var(--color-text-secondary);
+  --color-slate-600: var(--color-text-secondary);
+  --color-slate-700: var(--color-text);
+  --color-slate-800: var(--color-text);
+  --color-slate-900: var(--color-text);
+  --color-slate-950: var(--color-text);
+
+  --color-indigo-50: var(--color-primary-light);
+  --color-indigo-100: var(--color-primary-light);
+  --color-indigo-200: color-mix(in srgb, var(--color-primary) 20%, white);
+  --color-indigo-300: color-mix(in srgb, var(--color-primary) 35%, white);
+  --color-indigo-500: var(--color-primary);
+  --color-indigo-600: var(--color-primary);
+  --color-indigo-700: var(--color-primary-dark);
+  --color-indigo-950: var(--color-text);
+
+  --color-blue-50: var(--color-info-light);
+  --color-blue-700: var(--color-info);
+  --color-cyan-300: color-mix(in srgb, var(--color-primary) 35%, white);
+  --color-cyan-400: color-mix(in srgb, var(--color-primary) 25%, white);
+
+  --color-green-50: var(--color-success-light);
+  --color-green-700: var(--color-success);
+  --color-amber-50: var(--color-warning-light);
+  --color-amber-700: var(--color-warning);
+
+  --color-red-50: var(--color-danger-light);
+  --color-red-100: var(--color-danger-light);
+  --color-red-200: var(--color-danger-light);
+  --color-red-400: var(--color-danger);
+  --color-red-500: var(--color-danger);
+  --color-red-600: var(--color-danger);
+  --color-red-700: var(--color-danger);
+}

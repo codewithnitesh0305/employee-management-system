@@ -1,0 +1,277 @@
+/* =====================================================
+   FILTER BUTTON
+===================================================== */
+
+.filter-button {
+  position: relative;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 13px;
+  border: 1px solid var(--color-border);
+  border-radius: 7px;
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.filter-button:hover,
+.filter-button.has-filter {
+  color: var(--color-primary);
+}
+
+.filter-count {
+  min-width: 18px;
+  height: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 5px;
+
+  border-radius: 10px;
+
+  background: var(--color-primary);
+  color: var(--color-surface);
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* =====================================================
+   OVERLAY
+===================================================== */
+
+.filter-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 2000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: color-mix(in srgb, var(--color-text) 35%, transparent);
+}
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.filter-modal {
+  width: 100%;
+  max-width: 500px;
+
+  background: var(--color-surface);
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 20px 40px color-mix(in srgb, var(--color-text) 15%, transparent);
+
+  overflow: hidden;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.filter-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding: 18px 20px;
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.filter-modal-header h3 {
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.filter-modal-header p {
+  margin: 4px 0 0;
+
+  color: var(--color-text-muted);
+
+  font-size: 12px;
+}
+
+.filter-close {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 6px;
+
+  background: transparent;
+  color: var(--color-text-secondary);
+
+  cursor: pointer;
+}
+
+.filter-close:hover {
+  background: var(--color-primary-light);
+  color: var(--color-text);
+}
+
+/* =====================================================
+   BODY
+===================================================== */
+
+.filter-modal-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  padding: 20px;
+}
+
+/* =====================================================
+   FIELD
+===================================================== */
+
+.filter-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.filter-field label {
+  color: var(--color-text);
+
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.filter-field select {
+  width: 100%;
+  height: 40px;
+
+  padding: 0 10px;
+
+  border: 1px solid var(--color-border);
+  border-radius: 7px;
+
+  outline: none;
+
+  background: var(--color-surface);
+  color: var(--color-text);
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.filter-field select:hover {
+  border-color: var(--color-border-strong);
+}
+
+.filter-field select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 10%, transparent);
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.filter-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 8px;
+
+  padding: 14px 20px;
+
+  border-top: 1px solid var(--color-border);
+
+  background: var(--color-surface-muted);
+}
+
+.filter-footer-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.filter-reset-button,
+.filter-cancel-button,
+.filter-apply-button {
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.filter-reset-button {
+  border: none;
+  background: transparent;
+  color: var(--color-text-secondary);
+}
+
+
+.filter-cancel-button {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+}
+
+.filter-cancel-button:hover {
+  background: var(--color-surface-muted);
+}
+
+.filter-apply-button {
+  border: 1px solid;
+  background: var(--color-primary);
+  color: var(--color-surface);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+  .filter-modal-body {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-modal-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .filter-footer-actions {
+    justify-content: flex-end;
+  }
+}

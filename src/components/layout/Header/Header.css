@@ -1,0 +1,590 @@
+/* =========================================================
+   EMS HEADER
+========================================================= */
+
+.ems-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  /* Use the app's --sidebar-width variable so header stays aligned when sidebar width changes */
+  left: var(--sidebar-width, 240px);
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 900;
+  box-sizing: border-box;
+  transition: left 0.25s ease, padding 0.2s ease;
+  min-width: 0;
+}
+
+
+/* =========================================================
+   SIDEBAR COLLAPSED
+========================================================= */
+
+/* Allow collapse behavior to be driven via --sidebar-width when set on a parent (AppLayout). Keep legacy class for compatibility. */
+.ems-header.sidebar-collapsed {
+  left: var(--sidebar-width, 64px);
+}
+
+
+/* =========================================================
+   LEFT SECTION
+========================================================= */
+
+.header-left {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+
+/* =========================================================
+   MENU BUTTON
+========================================================= */
+
+.header-menu-button {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 14px;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.header-menu-button:hover {
+  background: var(--color-primary-light);
+
+  color: var(
+    --color-primary
+  );
+}
+
+
+/* =========================================================
+   HEADER CONTEXT
+========================================================= */
+
+.header-context {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  min-width: 0;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   SELECTOR WRAPPER
+========================================================= */
+
+.header-selector-wrapper {
+  position: relative;
+}
+
+
+/* =========================================================
+   SELECTOR
+========================================================= */
+
+.header-selector {
+  min-width: 190px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 5px 10px;
+
+  border: 1px solid transparent;
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: var(
+    --color-text
+  );
+
+  cursor: pointer;
+
+  text-align: left;
+
+  box-sizing: border-box;
+
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.header-selector:hover {
+  background: var(--color-primary-light);
+
+  border-color:
+    var(--color-border);
+}
+
+
+/* =========================================================
+   SELECTOR ICON
+========================================================= */
+
+.header-selector-icon {
+  width: 32px;
+  height: 32px;
+
+  min-width: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  background: var(
+    --color-primary-light
+  );
+
+  color: var(
+    --color-primary
+  );
+}
+
+.header-selector-logo {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   SELECTOR CONTENT
+========================================================= */
+
+.header-selector-content {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  flex: 1;
+}
+
+.header-selector-label {
+  font-size: 10px;
+  line-height: 14px;
+
+  color: var(
+    --color-text-muted
+  );
+
+  font-weight: 500;
+}
+
+.header-selector-value {
+  max-width: 150px;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  font-size: 13px;
+  line-height: 18px;
+
+  color: var(
+    --color-text
+  );
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   SELECTOR ARROW
+========================================================= */
+
+.header-selector-arrow {
+  flex-shrink: 0;
+
+  color: var(--color-text-secondary);
+}
+
+
+/* =========================================================
+   RIGHT SECTION
+========================================================= */
+
+.header-right {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   NOTIFICATION
+========================================================= */
+
+.header-notification {
+  position: relative;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: var(
+    --color-text
+  );
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.header-notification:hover {
+  background: var(--color-primary-light);
+
+  color: var(
+    --color-primary
+  );
+}
+
+
+/* =========================================================
+   NOTIFICATION BADGE
+========================================================= */
+
+.notification-badge {
+  position: absolute;
+
+  top: 4px;
+  right: 3px;
+
+  min-width: 16px;
+  height: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 4px;
+
+  border-radius: 20px;
+
+  background: var(
+    --color-primary
+  );
+
+  color: var(--color-surface);
+
+  font-size: 9px;
+  font-weight: 600;
+
+  line-height: 16px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.header-divider {
+  width: 1px;
+  height: 32px;
+
+  margin: 0 4px;
+
+  background:
+    var(--color-border);
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.header-profile {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 5px 7px;
+
+  border: 1px solid transparent;
+  border-radius: 8px;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.header-profile:hover {
+  background: var(--color-primary-light);
+
+  border-color:
+    var(--color-border);
+}
+
+
+/* =========================================================
+   PROFILE AVATAR
+========================================================= */
+
+.profile-avatar {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(
+    --color-primary
+  );
+
+  color: var(--color-surface);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   PROFILE INFO
+========================================================= */
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 80px;
+}
+
+.profile-name {
+  font-size: 13px;
+  line-height: 18px;
+
+  color: var(
+    --color-text
+  );
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.profile-role {
+  font-size: 10px;
+  line-height: 14px;
+
+  color: var(
+    --color-text-muted
+  );
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   PROFILE ARROW
+========================================================= */
+
+.profile-arrow {
+  color: var(--color-text-secondary);
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .header-selector {
+    min-width: 160px;
+  }
+
+  .header-selector-value {
+    max-width: 120px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .ems-header,
+  .ems-header.sidebar-collapsed {
+    left: 0;
+
+    height: 64px;
+
+    padding: 0 14px;
+  }
+
+  .header-menu-button {
+    margin-right: 8px;
+  }
+
+  .header-context {
+    gap: 2px;
+  }
+
+  .header-selector {
+    min-width: auto;
+
+    width: 42px;
+
+    padding: 5px;
+
+    justify-content: center;
+
+    border: none;
+  }
+
+  .header-selector-content,
+  .header-selector-arrow {
+    display: none;
+  }
+
+  .header-selector-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .profile-info,
+  .profile-arrow {
+    display: none;
+  }
+
+  .header-profile {
+    padding: 3px;
+  }
+
+  .header-divider {
+    display: none;
+  }
+}
+
+.header-profile-wrapper {
+  position: relative;
+}
+
+.profile-arrow {
+  transition: transform 0.2s ease;
+}
+
+.profile-arrow-open {
+  transform: rotate(180deg);
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 200px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--color-text) 10%, transparent);
+  padding: 6px;
+  z-index: 50;
+}
+
+.profile-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--color-text);
+  text-decoration: none;
+  width: 100%;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.profile-dropdown-item:hover {
+  background: var(--color-primary-light);
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .ems-header {
+    padding: 0 10px;
+  }
+
+  .header-right {
+    gap: 4px;
+  }
+
+  .header-notification {
+    width: 36px;
+    height: 36px;
+  }
+
+  .header-menu-button {
+    width: 36px;
+    height: 36px;
+  }
+}

@@ -1,0 +1,100 @@
+.setting-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+
+  padding: 16px;
+
+  background: var(--color-surface);
+
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+
+  text-decoration: none;
+
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.1s ease;
+}
+
+.setting-card:hover {
+  border-color: var(--color-primary);
+
+  box-shadow:
+    0 2px 10px color-mix(in srgb, var(--color-primary) 10%, transparent);
+}
+
+.setting-card:active {
+  transform: scale(0.997);
+}
+
+/* Icon */
+
+.setting-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  min-width: 42px;
+  height: 42px;
+
+  border-radius: 8px;
+
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+/* Content */
+
+.setting-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  flex: 1;
+  min-width: 0;
+}
+
+.setting-card-title {
+  color: var(--color-text);
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.setting-card-description {
+  color: var(--color-text-secondary);
+
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+/* Arrow */
+
+.setting-card-chevron {
+  flex-shrink: 0;
+
+  margin-top: 2px;
+
+  color: var(--color-text-muted);
+
+  transition:
+    color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.setting-card:hover .setting-card-chevron {
+  color: var(--color-primary);
+  transform: translateX(2px);
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .setting-card,
+  .setting-card-chevron {
+    transition: none;
+  }
+}

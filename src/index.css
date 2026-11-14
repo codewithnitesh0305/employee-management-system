@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+@import "./theme.css";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Use the CSS variable for viewport-based scaling */
+  font-size: var(--font-size-base);
+}
+
+/* Responsive font sizes: adjust base for different view widths */
+@media (max-width: 900px) {
+  :root {
+    --font-size-base: 13px;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --font-size-base: 12px;
+  }
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: calc(var(--font-size-base) * 1);
+}
+
+/* Helper utility classes for consistent sizes (usable in markup) */
+.text-sm-common { font-size: calc(var(--font-size-base) * 0.857); }
+.text-base-common { font-size: calc(var(--font-size-base) * 1); }
+.text-lg-common { font-size: calc(var(--font-size-base) * 1.07); }
+
+/* Ensure form controls inherit font settings */
+input, select, textarea, button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Remove number input spinner */
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  appearance: textfield;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* React DatePicker */
+
+.react-datepicker {
+  border: 1px solid var(--color-border) !important;
+  border-radius: 12px !important;
+  font-family: inherit !important;
+  box-shadow:
+    0 10px 15px -3px color-mix(in srgb, var(--color-text) 8%, transparent),
+    0 4px 6px -4px color-mix(in srgb, var(--color-text) 8%, transparent) !important;
+  overflow: hidden;
+}
+
+.react-datepicker__header {
+  background: var(--color-primary-light) !important;
+  border-bottom: 1px solid var(--color-border) !important;
+}
+
+.react-datepicker__current-month {
+  color: var(--color-text) !important;
+  font-weight: 600 !important;
+}
+
+.react-datepicker__day-name {
+  color: var(--color-text-secondary) !important;
+}
+
+.react-datepicker__day {
+  border-radius: 7px !important;
+}
+
+.react-datepicker__day:hover {
+  background: var(--color-primary-light) !important;
+  color: var(--color-primary) !important;
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background: var(--color-primary) !important;
+  color: var(--color-surface) !important;
+}
+
+.react-datepicker__day--today {
+  font-weight: 700 !important;
+  color: var(--color-primary) !important;
+}
+
+.react-datepicker__navigation-icon::before {
+  border-color: var(--color-text-secondary) !important;
+}

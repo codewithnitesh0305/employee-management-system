@@ -1,0 +1,803 @@
+.employee-add-page {
+  width: 100%;
+  min-height: 100%;
+
+  padding: 0 14px 30px;
+
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   FORM CARD
+===================================================== */
+
+.employee-form-card {
+  margin-top: 10px;
+
+  padding: 18px;
+
+  background: var(--color-surface);
+
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--color-text) 5%, transparent);
+
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+.employee-form-section {
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.employee-section-header {
+  min-height: 43px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 18px;
+
+  background: linear-gradient(
+    to right,
+    var(--color-primary-light),
+    var(--color-border)
+  );
+
+  color: var(--color-text);
+
+  font-size: 16px;
+  font-weight: 500;
+
+  border-radius: 0;
+
+  box-sizing: border-box;
+}
+
+.employee-section-body {
+  padding: 18px 0 4px;
+}
+
+.employee-details-table-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+}
+
+.employee-add-row-button {
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 11px;
+  color: var(--color-primary);
+  background: var(--color-surface);
+  border: 1px solid var(--color-primary);
+  border-radius: 6px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.employee-add-row-button:hover {
+  background: var(--color-primary-light);
+}
+
+.employee-details-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+.employee-details-table {
+  width: 100%;
+  min-width: 820px;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.employee-details-table th,
+.employee-details-table td {
+  padding: 9px 10px;
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.employee-details-table th {
+  color: var(--color-text);
+  background: var(--color-surface-muted);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.employee-details-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.employee-details-table td > input {
+  width: 100%;
+  min-width: 120px;
+  height: 36px;
+  padding: 0 9px;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  border-radius: 5px;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.employee-details-table .employee-table-datepicker {
+  display: block;
+  width: 100%;
+  min-width: 120px;
+}
+
+.employee-details-table .employee-table-date-input {
+  width: 100%;
+  min-width: 120px;
+  height: 36px;
+  padding: 0 9px;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  border-radius: 5px;
+  font: inherit;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.employee-details-table .employee-table-date-input:focus {
+  border-color: var(--color-primary);
+  outline: 2px solid
+    color-mix(in srgb, var(--color-primary) 14%, transparent);
+}
+
+.employee-table-calendar {
+  font-family: inherit;
+}
+
+.employee-table-calendar .react-datepicker__year-text:hover {
+  color: var(--color-primary) !important;
+  background: var(--color-primary-light) !important;
+  border-radius: 7px;
+}
+
+.employee-table-calendar .react-datepicker__year-text--selected,
+.employee-table-calendar .react-datepicker__year-text--keyboard-selected {
+  color: var(--color-surface) !important;
+  background: var(--color-primary) !important;
+  border-radius: 7px;
+}
+
+.employee-table-datepicker .react-datepicker-popper {
+  z-index: 5;
+}
+
+.employee-details-table td > input:focus {
+  border-color: var(--color-primary);
+  outline: 2px solid
+    color-mix(in srgb, var(--color-primary) 14%, transparent);
+}
+
+.employee-details-delete-column {
+  width: 62px;
+  text-align: center !important;
+}
+
+.employee-delete-row-button {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-danger);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.employee-delete-row-button:hover {
+  background: var(--color-danger-light);
+  border-color: var(--color-danger);
+}
+
+.employee-details-empty {
+  padding: 20px !important;
+  color: var(--color-text-muted);
+  text-align: center !important;
+}
+
+.employee-details-tabs {
+  margin-bottom: 18px;
+}
+
+.employee-details-tab-list {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.employee-details-tab {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 16px;
+  color: var(--color-text-secondary);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.employee-details-tab:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.employee-details-tab.is-active {
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  border-color: var(--color-primary);
+  box-shadow: 0 2px 6px
+    color-mix(in srgb, var(--color-primary) 12%, transparent);
+}
+
+.employee-details-tab:focus-visible,
+.employee-details-tab-panel:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.employee-details-tab-panel > .employee-form-section {
+  margin-bottom: 0;
+}
+
+/* =====================================================
+   PERSONAL DETAILS
+===================================================== */
+
+.personal-details-grid {
+  display: grid;
+
+  grid-template-columns:
+    1.1fr
+    1.1fr
+    1.1fr
+    1.1fr;
+
+  gap: 18px 28px;
+
+  align-items: start;
+}
+
+.employee-photo-column {
+  grid-row: span 3;
+}
+
+/* =====================================================
+   FORM FIELD
+===================================================== */
+
+.form-field {
+  min-width: 0;
+}
+
+.form-field label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--color-text);
+
+  font-size: 14px;
+  font-weight: 500;
+
+  line-height: 18px;
+}
+
+.required {
+  margin-left: 2px;
+  color: var(--color-danger);
+}
+
+/* =====================================================
+   INPUT
+===================================================== */
+
+.form-field input,
+.input-group input,
+.date-input-wrapper input {
+  width: 100%;
+  height: 41px;
+
+  padding: 0 12px;
+
+  border: 1px solid var(--color-border-strong);
+  border-radius: 6px;
+
+  background: var(--color-surface);
+
+  color: var(--color-text);
+
+  font-family: inherit;
+  font-size: 13px;
+
+  outline: none;
+
+  box-sizing: border-box;
+
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.form-field input::placeholder,
+.input-group input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.form-field input:focus,
+.input-group input:focus,
+.date-input-wrapper input:focus {
+  border-color: var(--color-primary);
+
+  box-shadow: 0 0 0 2px
+    color-mix(in srgb, var(--color-primary) 8%, transparent);
+}
+
+.form-field input:disabled,
+.custom-select-wrapper.disabled select {
+  background: var(--color-surface-muted);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+}
+
+/* =====================================================
+   INPUT GROUP
+===================================================== */
+
+.input-group {
+  width: 100%;
+
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  min-width: 0;
+}
+
+.input-group > .w-full {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.input-group .w-full input,
+.input-group .custom-select-wrapper > button {
+  height: 41px;
+  min-height: 41px;
+  box-sizing: border-box;
+}
+
+.input-group .custom-select-wrapper {
+  flex-shrink: 0;
+
+  border-right: none;
+
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* =====================================================
+   SELECT
+===================================================== */
+
+.custom-select-wrapper {
+  position: relative;
+
+  width: 100%;
+}
+
+.custom-select-wrapper select {
+  width: 100%;
+  height: 41px;
+
+  appearance: none;
+
+  padding: 0 36px 0 12px;
+
+  border: 1px solid var(--color-border-strong);
+  border-radius: 6px;
+
+  background: var(--color-surface);
+
+  color: var(--color-text);
+
+  font-family: inherit;
+  font-size: 13px;
+
+  outline: none;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+}
+
+.custom-select-wrapper select:focus {
+  border-color: var(--color-primary);
+
+  box-shadow: 0 0 0 2px
+    color-mix(in srgb, var(--color-primary) 8%, transparent);
+}
+
+.custom-select-wrapper svg {
+  position: absolute;
+
+  top: 50%;
+  right: 11px;
+
+  transform: translateY(-50%);
+
+  pointer-events: none;
+
+  color: var(--color-text-secondary);
+}
+
+/* =====================================================
+   SALUTATION
+===================================================== */
+
+.salutation-input {
+  width: 100px;
+}
+
+.family-salutation {
+  width: 122px;
+}
+
+.country-code-input {
+  width: 134px;
+}
+
+/* =====================================================
+   DATE
+===================================================== */
+
+.date-input-wrapper {
+  position: relative;
+}
+
+.date-input-wrapper input {
+  padding-right: 38px;
+}
+
+.date-input-wrapper svg {
+  position: absolute;
+
+  right: 12px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: var(--color-text-secondary);
+
+  pointer-events: none;
+}
+
+/* Hide browser calendar icon */
+
+.date-input-wrapper input::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* =====================================================
+   FAMILY DETAILS
+===================================================== */
+
+.family-person {
+  margin-bottom: 22px;
+}
+
+.family-person:last-child {
+  margin-bottom: 0;
+}
+
+.family-person h4,
+.address-block h4 {
+  margin: 0 0 12px;
+
+  color: var(--color-text);
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.family-grid {
+  display: grid;
+
+  grid-template-columns:
+    1.5fr
+    1.5fr
+    1.5fr;
+
+  gap: 18px 20px;
+}
+
+.family-name-field,
+.family-contact-field {
+  min-width: 0;
+}
+
+/* =====================================================
+   ADDRESS
+===================================================== */
+
+.address-block {
+  margin-bottom: 20px;
+}
+
+.address-grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr
+    1fr
+    1fr;
+
+  gap: 18px 20px;
+}
+
+.address-grid .form-field:nth-child(5) {
+  max-width: 400px;
+}
+
+/* =====================================================
+   CHECKBOX
+===================================================== */
+
+.same-address-checkbox {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin: 6px 0 22px;
+
+  color: var(--color-text);
+
+  font-size: 13px;
+
+  cursor: pointer;
+}
+
+.same-address-checkbox input {
+  width: 16px;
+  height: 16px;
+
+  margin: 0;
+
+  accent-color: var(--color-primary);
+
+  cursor: pointer;
+}
+
+/* =====================================================
+   BANK
+===================================================== */
+
+.four-column-grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr
+    1fr
+    1fr;
+
+  gap: 18px 20px;
+}
+
+/* =====================================================
+   ACTIONS
+===================================================== */
+
+.employee-form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  padding-top: 8px;
+}
+
+.employee-cancel-button,
+.employee-save-button {
+  min-width: 82px;
+  height: 38px;
+
+  padding: 0 18px;
+
+  border-radius: 6px;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.employee-cancel-button {
+  border: 1px solid var(--color-border-strong);
+
+  background: var(--color-surface);
+
+  color: var(--color-text-secondary);
+}
+
+.employee-cancel-button:hover {
+  background: var(--color-surface-muted);
+}
+
+.employee-save-button {
+  border: 1px solid var(--color-primary);
+
+  background: var(--color-primary);
+
+  color: var(--color-surface);
+}
+
+.employee-save-button:hover {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1200px) {
+  .personal-details-grid {
+    grid-template-columns:
+      1fr
+      1fr
+      1fr;
+  }
+
+  .employee-photo-column {
+    grid-row: span 3;
+  }
+
+  .address-grid,
+  .four-column-grid {
+    grid-template-columns:
+      1fr
+      1fr
+      1fr;
+  }
+}
+
+/* =====================================================
+   SMALL TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+  .personal-details-grid,
+  .family-grid,
+  .address-grid,
+  .four-column-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .employee-photo-column {
+    grid-row: auto;
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+  .employee-add-page {
+    padding: 0 8px 20px;
+  }
+
+  .employee-form-card {
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .personal-details-grid,
+  .family-grid,
+  .address-grid,
+  .four-column-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .employee-photo-column {
+    grid-row: auto;
+  }
+
+  .image-upload-box {
+    height: 190px;
+  }
+
+  .employee-section-header {
+    min-height: 40px;
+    padding: 0 12px;
+    font-size: 14px;
+  }
+
+  .employee-details-table-toolbar {
+    align-items: flex-start;
+  }
+
+  .employee-details-tab-list {
+    gap: 6px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .employee-details-tab {
+    flex: 0 0 auto;
+    gap: 6px;
+    padding: 0 8px;
+    font-size: 13px;
+  }
+
+  .employee-section-body {
+    padding-top: 14px;
+  }
+
+  .input-group {
+    width: 100%;
+  }
+
+  .salutation-input,
+  .family-salutation,
+  .country-code-input {
+    width: 110px;
+  }
+
+  .employee-form-actions {
+    justify-content: stretch;
+  }
+
+  .employee-cancel-button,
+  .employee-save-button {
+    flex: 1;
+  }
+}

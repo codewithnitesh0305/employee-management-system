@@ -1,0 +1,83 @@
+{
+  "app": {
+    "routes": {
+      "home": "/",
+      "login": "/login",
+      "signup": "/signup",
+      "forgotPassword": "/forgot-password",
+      "resetPassword": "/reset-password",
+      "employeesList": "/employee-information/employeeslist",
+      "employeeAdd": "/employee-information/addEmployee",
+      "organizationSettings": "/organization-settings",
+      "organizationDetails": "/organization-settings/details"
+    }
+  },
+
+  "api": {
+    "baseUrl": "http://localhost:3000/api",
+    "timeoutMs": 30000
+  },
+
+  "modules": {
+    "auth": {
+      "routes": {
+        "login": "/login",
+        "signup": "/signup",
+        "forgotPassword": "/forgot-password",
+        "resetPassword": "/reset-password"
+      },
+      "endpoints": {
+        "login": { "method": "POST", "path": "/auth/login" },
+        "logout": { "method": "POST", "path": "/auth/logout" },
+        "signup": { "method": "POST", "path": "/auth/signup" }
+      }
+    },
+
+    "employee": {
+      "label": "Employee Management",
+      "icon": "BriefcaseBusiness",
+      "routes": {
+        "list": "/employee-information/employeeslist",
+        "add": "/employee-information/addEmployee"
+      },
+      "children": [
+        { "key": "employee.add", "label": "Add Employee", "path": "/employee-information/addEmployee" },
+        { "key": "employee.list", "label": "Employee List", "path": "/employee-information/employeeslist" },
+        { "key": "employee.inactive", "label": "Inactive Employee", "path": "/employee-information/employees/inactive" },
+        { "key": "employee.documents", "label": "Employee Document", "path": "/employee-information/documents" },
+        { "key": "employee.dataPort", "label": "Employee Data Port", "path": "/employee-information/data-port" },
+        { "key": "employee.advancedSearch", "label": "Employee Advance Search", "path": "/employee-information/advance-search" },
+        {
+          "key": "employee.reports",
+          "label": "Report",
+          "path": "/employee-information/reports",
+          "children": [
+            { "key": "employee.reports.employees", "label": "Employee Report", "path": "/employee-information/reports/employees" },
+            { "key": "employee.reports.departments", "label": "Department Report", "path": "/employee-information/reports/departments" },
+            { "key": "employee.reports.designations", "label": "Designation Report", "path": "/employee-information/reports/designations" }
+          ]
+        },
+        { "key": "employee.setup", "label": "Setup", "path": "/employee-information/setup" }
+      ],
+      "endpoints": {
+        "list": { "method": "GET", "path": "/employees" },
+        "get": { "method": "GET", "path": "/employees/{id}" },
+        "create": { "method": "POST", "path": "/employees" },
+        "update": { "method": "PUT", "path": "/employees/{id}" },
+        "delete": { "method": "DELETE", "path": "/employees/{id}" }
+      }
+    },
+
+
+    "organization": {
+      "routes": {
+        "settings": "/organization-settings",
+        "details": "/organization-settings/details"
+      },
+      "endpoints": {
+        "get": { "method": "GET", "path": "/organization" },
+        "update": { "method": "PUT", "path": "/organization" }
+      }
+    }
+  }
+}

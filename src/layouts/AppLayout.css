@@ -1,0 +1,131 @@
+/* =========================================================
+   LAYOUT TOKENS
+   Single source of truth — Sidebar.css and Header.css
+   should reference these same variables instead of
+   hardcoding 285px / 76px / header height separately.
+========================================================= */
+
+:root {
+  --sidebar-width: 285px;
+  --sidebar-width-collapsed: 76px;
+  --sidebar-width-mobile: 280px;
+
+  --header-height: 70px;
+  --header-height-tablet: 66px;
+  --header-height-mobile: 64px;
+
+  --content-padding: 20px;
+  --content-padding-tablet: 20px;
+  --content-padding-mobile: 16px;
+}
+
+
+/* =========================================================
+   APP LAYOUT
+========================================================= */
+
+.app-layout {
+  min-height: 100vh;
+  width: 100%;
+  background: var(--color-background);
+}
+
+
+/* =========================================================
+   MAIN AREA
+========================================================= */
+
+.app-main {
+  min-height: 100vh;
+  margin-left: var(--sidebar-width);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  transition: margin-left 0.25s ease;
+}
+
+
+/* =========================================================
+   COLLAPSED SIDEBAR
+========================================================= */
+
+.app-main.sidebar-collapsed {
+  margin-left: var(--sidebar-width-collapsed);
+}
+
+
+/* =========================================================
+   FULL WIDTH
+   Used when sidebar is hidden
+   Example: Organization Settings
+========================================================= */
+
+.app-main-full {
+  min-height: 100vh;
+  width: 100%;
+  margin-left: 0;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  transition: margin-left 0.25s ease;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.app-content {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: var(--content-padding);
+
+  /*
+    Header is fixed/positioned above the content,
+    therefore reserve its height here.
+  */
+  padding-top: calc(
+    var(--header-height) + var(--content-padding)
+  );
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+  .app-content {
+    padding: var(--content-padding-tablet);
+
+    padding-top: calc(
+      var(--header-height-tablet) +
+      var(--content-padding-tablet)
+    );
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+  .app-main,
+  .app-main.sidebar-collapsed,
+  .app-main-full {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .app-content {
+    padding: var(--content-padding-mobile);
+
+    padding-top: calc(
+      var(--header-height-mobile) +
+      var(--content-padding-mobile)
+    );
+  }
+}
